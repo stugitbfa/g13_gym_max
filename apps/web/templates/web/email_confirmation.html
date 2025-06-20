@@ -1,0 +1,8 @@
+<h2>Email Confirmation</h2>
+<p>We have sent an OTP to your email. Please check your inbox and enter it below.</p>
+<form method="POST" action="{% url 'verify_otp' %}">
+    {% csrf_token %}
+    <label>Enter OTP:</label>
+    <input type="text" name="otp" required>
+    <button type="submit">Verify OTP</button>
+</form>

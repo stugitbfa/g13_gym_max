@@ -1,13 +1,9 @@
 from django.urls import path
-from .views import *
+from . import views
+
 
 urlpatterns = [
-    path('', login, name='login'),
-    path('register/', register, name='register'),
-    path('forgot-password/', forgot_password, name='forgot_password'),
-    path('index/', index, name='index'),
-    path('services/', services, name='services'),
-    path('about/', about, name='about'),
-    path('contact/', contact, name='contact'),
-    path('gym/', gym, name='gym'),
-] 
+    path('', views.enter_email, name='enter_email'),  # Home page is now email input
+    path('verify-otp/', views.verify_otp, name='verify_otp'),  # This should already exist
+    path('login/', views.login_view, name='login'),  # Existing login view
+]
